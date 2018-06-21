@@ -552,31 +552,10 @@ function colour_picker_save($post_id)
 
 }
 
-
-function colour_picker_save($post_id)
-{
-    if ( !isset( $_POST['wdm_meta_box_nonce'] ) ) {
-        return;
-    }
-
-    if ( !wp_verify_nonce( $_POST['wdm_meta_box_nonce'], 'wdm_meta_box' ) ) {
-        return;
-    }
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-        return;
-    }
-    if ( !current_user_can( 'edit_post', $post_id ) ) {
-        return;
-    }
-
-    $post_bg = ( isset( $_POST['post_bg'] ) ? sanitize_html_class( $_POST['post_bg'] ) : '' );
-    update_post_meta( $post_id, 'post_bg', $post_bg );
-
-}
-
 add_action( 'add_meta_boxes', 'wdm_add_meta_box' );
 add_action('save_post', 'colour_picker_save');
 add_action('admin_enqueue_scripts', 'wpse_80236_Colorpicker');
+
 
 
 /*------------------------------------*\
