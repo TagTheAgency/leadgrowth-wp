@@ -558,6 +558,36 @@ add_action('admin_enqueue_scripts', 'wpse_80236_Colorpicker');
 
 
 
+function wdm_add_meta_box_posts() {
+	add_meta_box('wdm_sectionid', 'Post Background Colour', 'wdm_meta_box_callback_post', 'post');
+}
+
+function wdm_meta_box_callback_post( $post ) {
+	wp_nonce_field( 'wdm_meta_box', 'wdm_meta_box_nonce' );
+	$color = get_post_meta( $post->ID, 'post_bg', true );
+    ?>
+	<div class="custom_meta_box">
+	<p>
+	<label>Select Post Background Color: </label>
+	<input class="color-field" type="text" name="post_bg" value="<?php echo '#'.$color; ?>"/>
+	</p>
+	<div class="clear"></div>
+	</div>
+    <script>
+    (function( $ ) {
+    	// Add Color Picker to all inputs that have 'color-field' class
+    	$(function() {
+    	$('.color-field').wpColorPicker();
+    	});
+    })( jQuery );
+    </script>
+    <?php
+}
+
+add_action( 'add_meta_boxes', 'wdm_add_meta_box_posts' );
+
+
+
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/

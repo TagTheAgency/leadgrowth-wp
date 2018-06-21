@@ -10,9 +10,8 @@
 			<!-- article -->
 			<div id="post-<?php the_ID(); ?>" <?php post_class("row justify-content-center align-items-center py-3 {$alignment}"); ?>>
 
-				<div class="col-11 col-md-6 order-2 order-md-1 text-center">
-					<strong>
-					<h2 class="text-primary"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2></strong>
+				<div class="col-11 col-md-11 order-2 order-md-1 text-center">
+					<h2 class="text-white ls-6 pb-5 font-1"><?php the_title(); ?></h2>
 					<p><?php the_content(); ?></p>
 				</div>
 			</div>
