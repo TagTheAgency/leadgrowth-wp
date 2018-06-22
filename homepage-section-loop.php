@@ -10,7 +10,7 @@
 			<!-- article -->
 			<div id="post-<?php the_ID(); ?>" <?php post_class("row justify-content-center align-items-center mb-lg-5 py-3 {$alignment}"); ?>>
 
-				<div class="col-11 col-md-6 <?php if( has_post_thumbnail()): ?>col-lg-8<?php else:?>col-lg-10<?php endif; ?> order-2 order-md-1 text-center">
+				<div class="col-11 col-md-6 <?php if( has_post_thumbnail()): ?>col-lg-6<?php else:?>col-lg-10<?php endif; ?> order-2 order-md-1 text-center">
 					<strong>
 					<h2 class="text-primary"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2></strong>
 					<p><?php the_excerpt(); ?></p>
@@ -18,7 +18,7 @@
 				</div>
 				<!-- post thumbnail -->
 				<?php if ( has_post_thumbnail()): // Check if Thumbnail exists ?>
-					<div class="col-11 col-md-6 col-lg-4 order-1 order-md-2">
+					<div class="col-11 col-md-6 col-lg-6 col-xl-5 order-1 order-md-2">
 						<div class="img-container">
 							<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 						</div>
