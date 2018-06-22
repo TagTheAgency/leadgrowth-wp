@@ -44,7 +44,7 @@ a{
 }
 
 h1{
-    font-size: 3em;
+    font-size: 1.5em;
     font-weight: 700
 }
 
@@ -200,7 +200,7 @@ nav{
 }
 
 .hero-header{
-    font-size: 3em;
+    font-size: 2em;
 }
 
 .hero-sub-header{
@@ -427,6 +427,7 @@ nav{
     font-weight: 800;
     padding-bottom: 2px;
     border-bottom: 2px solid $primaryColour;
+    display: inline-block;
 }
 
 .floating-img{
@@ -435,6 +436,12 @@ nav{
     overflow: hidden;
     display: flex;
     align-items: center;
+}
+
+#mobile-menu{
+    .menu-item{
+        margin-bottom: 10px;
+    }
 }
 
 // Input Fields
@@ -676,7 +683,7 @@ input{
     }
 
     p{
-        line-height: 28px;
+        // line-height: 28px;
         margin-bottom: 10px;
         font-size: 1.1em;
     }
@@ -1312,6 +1319,7 @@ footer{
 /* Responsive Media Queries */
 
 @media (min-width: 576px) {
+
   .m-sm-0 {
     margin: 0 !important;
   }
@@ -1603,6 +1611,13 @@ footer{
   }
   .font-sm-4{
       font-size: 4em !important;
+  }
+  h1{
+      font-size: 2em !important;
+  }
+
+  .hero-header{
+        font-size: 3em !important;
   }
 }
 
@@ -1899,6 +1914,9 @@ footer{
   .font-md-4{
       font-size: 4em !important;
   }
+  h1{
+      font-size: 3.3em !important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -2194,6 +2212,17 @@ footer{
   .font-lg-4{
       font-size: 4em !important;
   }
+  .logo-wrapper{
+      width: 120px !important;
+  }
+
+  .p{
+    font-size: 1.4em !important;
+  }
+
+  h1{
+      font-size: 2em !important;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2479,6 +2508,19 @@ footer{
   }
   .font-xl-4{
       font-size: 4em !important;
+  }
+  .hero-header{
+      font-size: 4em !important;
+  }
+  h1{
+    font-size: 3.1em !important;
+  }
+
+  h2{
+      font-size: 3em !important;
+  }
+  p{
+      font-size: 1.2em !important;
   }
 }
 
