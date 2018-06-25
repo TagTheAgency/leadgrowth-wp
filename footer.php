@@ -19,7 +19,7 @@
 				<div class="container-fluid pt-5">
 					<div class="container">
 						<div class="row justify-content-center justify-content-md-between">
-							<div class="col-10 col-md-4 my-2 mt-sm-0 text-center">
+							<div class="col-10 col-md-auto my-2 mt-sm-0 text-center">
 								<p class="copyright text-white">
 									&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
 								</p>
@@ -32,7 +32,7 @@
 								</ul>
 							</div>
 							<div class="col-10 col-md-auto ls-4 text-white text-center text-md my-3 mt-md-0 col-md-auto top trigger">
-								TO TOP <i class="material-icons d-none d-md-inline-block">arrow_upward_alt</i>
+								BACK TO TOP 
 							</div>
 						</div>
 					</div>

@@ -14,7 +14,7 @@
 					<strong>
 					<h2 class="text-primary"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2></strong>
 					<p><?php the_excerpt(); ?></p>
-					<a href="<?php the_permalink(); ?>" class="link-off"><div class="btn btn-primary-filled m-0 mt-4 form-scroll btn-round d-inline-flex align-items-center btn-arrow">LEARN MORE <i class="material-icons">keyboard_arrow_right</i></div></a>
+					<a href="<?php the_permalink(); ?>" class="link-off"><div class="btn btn-primary-filled m-0 mt-4 btn-round d-inline-flex align-items-center btn-arrow">LEARN MORE <i class="material-icons">keyboard_arrow_right</i></div></a>
 				</div>
 				<!-- post thumbnail -->
 				<?php if ( has_post_thumbnail()): // Check if Thumbnail exists ?>
