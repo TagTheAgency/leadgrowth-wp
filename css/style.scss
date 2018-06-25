@@ -218,10 +218,9 @@ nav{
 }
 
 .hero-banner-full{
-	background-position: top;
-	background-size: cover;
-	// background-attachment: fixed;
-	background-repeat: no-repeat;
+	background-position: bottom !important;
+	background-size: contain !important;
+    background-repeat: no-repeat;
 	background-color: transparent !important;
 }
 
@@ -1953,6 +1952,13 @@ footer{
   }
   h1{
       font-size: 3.3em !important;
+  }
+  .hero-banner-full{
+  	background-position: top;
+  	background-size: cover;
+  	// background-attachment: fixed;
+  	background-repeat: no-repeat;
+  	background-color: transparent !important;
   }
 }
 
