@@ -17,6 +17,7 @@
 		</div>
 		<div class="container-fluid text-white">
 			<?php get_template_part('homepage-section-loop'); ?>
+			<?php get_template_part('testimonial-loop'); ?>
 			<?php get_template_part('loop') ?>
 			<?php get_template_part('pagination'); ?>
 		</div>

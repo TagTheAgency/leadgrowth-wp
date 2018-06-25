@@ -13,14 +13,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="container text-white">
+		<div class="container">
 			<?php get_template_part('homepage-section-loop.php'); ?>
-
+			<?php get_template_part('testimonial-loop.php'); ?>
 			<?php get_template_part('pagination'); ?>
 		</div>
 		<!-- /section -->
 	</main>
-
 <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

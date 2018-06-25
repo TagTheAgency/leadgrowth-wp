@@ -368,6 +368,7 @@ add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comment
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'custom_post_type'); // Add our HTML5 Blank Custom Post Type
+add_action('init', 'custom_post_type_testimonial');
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -489,6 +490,43 @@ function custom_post_type()
     ));
 }
 
+function custom_post_type_testimonial()
+{
+    register_taxonomy_for_object_type('category', 'testimonial'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'testimonial');
+    register_post_type('testimonial', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('Testimonial Section', 'testimonialsection'), // Rename these to suit
+            'singular_name' => __('Testimonial Section', 'testimonialsection'),
+            'add_new' => __('Add New', 'testimonialsection'),
+            'add_new_item' => __('Add New Testimonial Section', 'testimonialsection'),
+            'edit' => __('Edit', 'testimonialsection'),
+            'edit_item' => __('Edit Testimonial Section', 'testimonialsection'),
+            'new_item' => __('New Testimonial Section', 'testimonialsection'),
+            'view' => __('View Testimonial Section', 'testimonialsection'),
+            'view_item' => __('View Testimonial Section', 'testimonialsection'),
+            'search_items' => __('Search Testimonial Section', 'testimonialsection'),
+            'not_found' => __('No Testimonial Sections found', 'testimonialsection'),
+            'not_found_in_trash' => __('No Testimonial Section Posts found in Trash', 'testimonialsection')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'taxonomies' => array(
+            'post_tag',
+            'category'
+        ) // Add Category and Post Tags support
+    ));
+}
+
 /*------------------------------------*\
 	Custom Meta Boxes
 \*------------------------------------*/
@@ -585,6 +623,51 @@ function wdm_meta_box_callback_post( $post ) {
 }
 
 add_action( 'add_meta_boxes', 'wdm_add_meta_box_posts' );
+
+// =========================================
+
+function wdm_add_meta_box_company() {
+	add_meta_box('wdm_sectionid', 'Client Company', 'wdm_meta_box_callback_company', 'testimonial');
+}
+
+function wdm_meta_box_callback_company( $post ) {
+	wp_nonce_field( 'wdm_meta_box', 'wdm_meta_box_company_nonce' );
+	$company_name = get_post_meta( $post->ID, 'client_company', true );
+    ?>
+	<div class="custom_meta_box">
+	<p>
+	<label>Company Name </label>
+	<input type="text" name="client_company" value="<?php echo$company_name; ?>"/>
+	</p>
+	<div class="clear"></div>
+	</div>
+    <?php
+}
+
+function company_save($post_id)
+{
+    if ( !isset( $_POST['wdm_meta_box_company_nonce'] ) ) {
+        return;
+    }
+
+    if ( !wp_verify_nonce( $_POST['wdm_meta_box_company_nonce'], 'wdm_meta_box' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( !current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+    $company_name = $_POST['client_company'];
+    update_post_meta( $post_id, 'client_company', $company_name );
+
+}
+
+add_action( 'add_meta_boxes', 'wdm_add_meta_box_company' );
+add_action('save_post', 'company_save');
+
 
 
 
