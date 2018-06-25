@@ -15,7 +15,7 @@
 					</div>
 				</div>
 			</div>
-			<footer class="footer py-3 py-md-5 primary" role="contentinfo">
+			<footer class="footer py-3 py-md-5" role="contentinfo">
 				<div class="container-fluid pt-5">
 					<div class="container">
 						<div class="row justify-content-center justify-content-md-between">
@@ -32,7 +32,7 @@
 								</ul>
 							</div>
 							<div class="col-10 col-md-auto ls-4 text-white text-center text-md my-3 mt-md-0 col-md-auto top trigger">
-								BACK TO TOP 
+								BACK TO TOP
 							</div>
 						</div>
 					</div>
