@@ -11,7 +11,7 @@
 			<div id="post-<?php the_ID(); ?>" <?php post_class("row justify-content-center align-items-center py-3 {$alignment}"); ?>>
 
 				<div class="col-11 col-md-11 order-2 order-md-1 text-center">
-					<h2 class="text-white ls-6 pb-5 font-1"><?php the_title(); ?></h2>
+					<h2 class="text-white pb-5 font-1"><?php the_title(); ?></h2>
 					<p><?php the_content(); ?></p>
 				</div>
 			</div>
