@@ -26,9 +26,9 @@
 							</div>
 							<div id="social-links" class="col-10 col-md-auto pl-0 my-3 mt-sm-0 text-white">
 								<ul class="d-flex justify-content-center">
-									<li class="mr-5"><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in hover-secondary"></i></a></li>
-									<li class="mr-5"><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f hover-secondary"></i></a></li>
-									<li ><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter hover-secondary" target="_blank"></i></a></li>
+									<li class="mr-5"><a href="https://www.linkedin.com/company/leadgrowthnz/" target="_blank"><i class="fab fa-linkedin-in hover-secondary"></i></a></li>
+									<li class="mr-5"><a href="https://web.facebook.com/leadgrowthNZ" target="_blank"><i class="fab fa-facebook-f hover-secondary"></i></a></li>
+									<li ><a href="https://twitter.com/LeadGrowth" target="_blank"><i class="fab fa-twitter hover-secondary" target="_blank"></i></a></li>
 								</ul>
 							</div>
 							<div class="col-10 col-md-auto ls-4 text-white text-center text-md my-3 mt-md-0 col-md-auto top trigger">
