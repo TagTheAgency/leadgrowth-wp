@@ -38,6 +38,7 @@
 					</div>
 				</div>
 				<div class="spacer-100"></div>
+				<!-- Load Facebook SDK for JavaScript -->
 			</footer>
 			<!-- /footer -->
 		</div>
