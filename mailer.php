@@ -7,7 +7,7 @@
 				$name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $message = trim($_POST["message"]);
-		$recipient = "charlie@tagtheagency.com";
+		$recipient = "steve@leadgrowth.co.nz";
         $phone = trim($_POST["number"]);
 
         // Check that data was sent to the mailer.
