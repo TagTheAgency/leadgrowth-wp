@@ -1,7 +1,7 @@
 <?php $args = array('post_type' => 'testimonial'); ?>
 <?php $loop = new WP_query($args); ?>
 <?php if ($loop->have_posts()):?>
-	<div class="container-fluid py-5" style="background-color: #<?= $bg_color ?>">
+	<div class="container-fluid py-5">
 		<div class="container shadow-me">
 			<div class="row text-primary justify-content-center">
 				<div class="col-auto mb-3">

@@ -7,8 +7,9 @@
 	<?php
 		$alignment = get_post_meta( $post->ID, 'text_alignment_meta', true );
 		$bg_color = get_post_meta( $post->ID, 'post_bg', true );
+		$text_color = get_post_meta( $post->ID, 'text_color', true );
 	?>
-	<div class="container-fluid py-4 text-black" style="background-color: #<?= $bg_color ?>">
+	<div class="container-fluid py-4 text-black" style="<?php if($bg_color): ?>background-color: #<?= $bg_color ?>;<?php endif; ?> <?php if($text_color): ?> color: #<?= $text_color ?><?php endif; ?>">
 		<div class="container homepage-section">
 			<!-- article -->
 			<div id="post-<?php the_ID(); ?>" <?php post_class("left-column row justify-content-center justify-content-lg-between align-items-lg-start mb-lg-5 py-3 {$alignment}"); ?>>
