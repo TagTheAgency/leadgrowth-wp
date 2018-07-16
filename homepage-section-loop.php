@@ -71,5 +71,19 @@
 	</div>
 	<?php endwhile; ?>
 <?php else: ?>
-
+<?php endif; ?>
+<?php $tesimonyArgs = array('post_type' => 'homepage-section', 'meta_value' => array(
+	'key' => 'Testimonies',
+	'value' => 'testimonial-template.php'
+)); ?>
+<?php $testimonyLoop = new WP_query($tesimonyArgs); ?>
+<?php if ($testimonyLoop->have_posts()): while($testimonyLoop->have_posts()):$testimonyLoop->the_post();  ?>
+	<?php
+		$alignment = get_post_meta( $post->ID, 'text_alignment_meta', true );
+		$bg_color = get_post_meta( $post->ID, 'post_bg', true );
+		$text_color = get_post_meta( $post->ID, 'text_color', true );
+	?>
+	<?php get_template_part('full-testimonial-loop'); ?>
+	<?php endwhile; ?>
+<?php else: ?>
 <?php endif; ?>
