@@ -199,17 +199,35 @@ nav{
     background-color: transparent !important;
     background: transparent !important;
     box-shadow: none !important;
+}
 
+.feature-section{
+    display: flex;
+    flex-wrap: wrap;
+
+    h4{
+        padding: 30px;
+        background-color: $primaryColour;
+        color: white;
+        width: 30%;
+        border-radius: 20px;
+        margin: 10px;
+    }
 }
 
 // Hero Banner
+
+.hero-container{
+    overflow: hidden;
+}
 
 .hero-banner{
     min-height: 600px;
 }
 
 .hero-header{
-    font-size: 2em;
+    font-size: 1em;
+    font-weight: 400;
 }
 
 .hero-sub-header{
@@ -735,6 +753,17 @@ input{
     }
 }
 
+.left-column{
+    h3{
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 800;
+    }
+
+    p{
+        font-size: 1em !important;
+    }
+}
 // Footer
 
 footer{
@@ -1653,7 +1682,7 @@ footer{
   }
 
   .hero-header{
-        font-size: 3em !important;
+        font-size: 1.3em !important;
   }
 }
 
@@ -2553,7 +2582,7 @@ footer{
       font-size: 4em !important;
   }
   .hero-header{
-      font-size: 4em !important;
+      font-size: 2em !important;
   }
   h1{
     font-size: 3.1em !important;
@@ -3576,6 +3605,13 @@ html {
   .offset-lg-11 {
     margin-left: 91.666667%;
   }
+  .hero-banner-full{
+  	background-position: bottom !important;
+  	background-size: cover !important;
+      background-repeat: no-repeat;
+  	background-color: transparent !important;
+  }
+
 }
 
 @media (min-width: 1200px) {

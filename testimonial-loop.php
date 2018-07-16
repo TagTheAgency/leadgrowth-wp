@@ -1,22 +1,17 @@
 <?php $args = array('post_type' => 'testimonial'); ?>
 <?php $loop = new WP_query($args); ?>
 <?php if ($loop->have_posts()):?>
-	<div class="container-fluid py-5" style="background-color: #<?= $bg_color ?>">
-		<div class="container shadow-me">
-			<div class="row text-primary justify-content-center">
-				<div class="col-auto mb-3">
-					<h2>Testimonies</h2>
-				</div>
-			</div>
-		<?php  while($loop->have_posts()):$loop->the_post();  ?>
+	<div class="container-fluid pt-5 pt-lg-0" style="background-color: #<?= $bg_color ?>">
+		<div class="container">
+			<?php  while($loop->have_posts()):$loop->the_post();  ?>
 			<div class="row justify-content-center align-items-center mb-3">
-				<a href="<?php the_permalink(); ?>" class="testimony row col-11 py-5 px-3 primary rounded justify-content-center align-items-center testimonial-item">
-					<div class="col-auto col-md-2 mb-4 mb-md-0">
+				<a href="<?php the_permalink(); ?>" class="testimony row py-5 px-3 primary rounded justify-content-center align-items-center testimonial-item">
+					<div class="col-12 row justify-content-center pb-3">
 						<div class="img-container testimonial-image-small">
 							<?php the_post_thumbnail(); ?>
 						</div>
 					</div>
-					<div class="col-12 col-md-7 text-center">
+					<div class="col-12 text-center">
 						<div class="col-12 mb-3 testiominal-text font-1">
 							<p><?php the_excerpt(); ?></p>
 						</div>
@@ -26,7 +21,7 @@
 					</div>
 				</a>
 			</div>
-		<?php endwhile; ?>
+			<?php endwhile; ?>
 		</div>
 	</div>
 

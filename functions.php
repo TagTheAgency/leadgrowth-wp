@@ -541,7 +541,64 @@ function wpse_80236_Colorpicker(){
 	wp_enqueue_script( 'wp-color-picker');
 }
 
-// =========================================================================================================
+/*------------------------------------*\
+	Text Colour
+\*------------------------------------*/
+
+function text_color_meta() {
+	add_meta_box('text_colour_id', 'Text Colour', 'text_color_html', 'homepage-section');
+}
+
+function text_color_html( $post ) {
+	wp_nonce_field( 'text_color_meta', 'text_color_meta_nonce' );
+	$color = get_post_meta( $post->ID, 'text_color', true );
+    ?>
+	<div class="custom_meta_box">
+	<p>
+	<label>Select Text Colour: </label>
+	<input class="color-field" type="text" name="text_color" value="<?php echo '#'.$color; ?>"/>
+	</p>
+	<div class="clear"></div>
+	</div>
+    <script>
+    (function( $ ) {
+    	// Add Color Picker to all inputs that have 'color-field' class
+    	$(function() {
+    	$('.color-field').wpColorPicker();
+    	});
+    })( jQuery );
+    </script>
+    <?php
+}
+
+function text_color_meta_save($post_id)
+{
+    if ( !isset( $_POST['text_color_meta_nonce'] ) ) {
+        return;
+    }
+
+    if ( !wp_verify_nonce( $_POST['text_color_meta_nonce'], 'text_color_meta' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( !current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+    $text_color = ( isset( $_POST['text_color'] ) ? sanitize_html_class( $_POST['text_color'] ) : '' );
+    update_post_meta( $post_id, 'text_color', $text_color );
+
+}
+
+add_action( 'add_meta_boxes', 'text_color_meta' );
+add_action('save_post', 'text_color_meta_save');
+
+
+/*------------------------------------*\
+	Background Colour
+\*------------------------------------*/
 
 function wdm_add_meta_box() {
 	add_meta_box('wdm_sectionid', 'Post Background', 'wdm_meta_box_callback', 'homepage-section');
@@ -592,9 +649,6 @@ function colour_picker_save($post_id)
 
 add_action( 'add_meta_boxes', 'wdm_add_meta_box' );
 add_action('save_post', 'colour_picker_save');
-add_action('admin_enqueue_scripts', 'wpse_80236_Colorpicker');
-
-
 
 function wdm_add_meta_box_posts() {
 	add_meta_box('wdm_sectionid', 'Post Background Colour', 'wdm_meta_box_callback_post', 'post');
@@ -622,6 +676,7 @@ function wdm_meta_box_callback_post( $post ) {
     <?php
 }
 
+add_action('admin_enqueue_scripts', 'wpse_80236_Colorpicker');
 add_action( 'add_meta_boxes', 'wdm_add_meta_box_posts' );
 
 // =========================================
