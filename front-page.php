@@ -18,6 +18,7 @@
 			<?php get_template_part('split-column-loop'); ?>
 			<?php get_template_part('loop') ?>
 			<?php get_template_part('homepage-section-loop'); ?>
+			<?php get_template_part('full-testimonial-loop'); ?>
 			<?php get_template_part('pagination'); ?>
 		</div>
 		<!-- /section -->
