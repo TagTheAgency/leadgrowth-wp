@@ -1,8 +1,13 @@
 			<!-- footer -->
-			<div class="container text-center pb-sm-5 fade-in pt-4 pt-md-0 mb-5 mb-md-0">
+			<div class="container text-left pb-sm-5 fade-in pt-4 pt-md-0 mb-5 mb-md-0 contact-container">
 				<div class="row justify-content-center align-items-center py-2 py-sm-5">
-					<div class="col-11 col-md-6 col-lg-5">
-						<h2 id="form-header" class="underline text-primary underline-gradient ls-1">Get In Touch <i class="material-icons d-none d-md-inline-block">arrow_right_alt</i></h2>
+					<div class="col-11 col-md-6 col-lg-5 pr-0 pr-md-5">
+						<h3 id="form-header" class="text-primary mb-4">If you would like to feel this way about LinkedIn and the results it can gain for your business get in touch.</h3>
+						<ul>
+							<li><i class="fas fa-user-tie text-primary mr-2"></i> Steve Mannion</li>
+							<li><i class="fas fa-phone text-primary mr-2"></i> +64 021 022 44127</li>
+							<li><i class="fas fa-envelope text-primary mr-2"></i> steve@leadgrowth.co.nz</li>
+						</ul>
 					</div>
 					<div id="form-container" class="col-11 col-md-6 col-lg-5">
 						<form method="POST" id="contactform" class="contact-form" action="<?php echo get_template_directory_uri(); ?>/mailer.php">

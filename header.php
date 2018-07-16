@@ -9,7 +9,7 @@
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
         <link href="<?php echo get_template_directory_uri(); ?>/css/style.min.css" rel="stylesheet">
         <link href="<?php echo get_template_directory_uri(); ?>/css/normalize.min.css" rel="stylesheet">
-		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 	  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">

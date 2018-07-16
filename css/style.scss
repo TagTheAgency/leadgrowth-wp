@@ -771,6 +771,25 @@ input{
 }
 // Footer
 
+.contact-container{
+    ul{
+        list-style-type: none;
+    }
+
+    li{
+        margin-bottom: 10px;
+    }
+}
+
+.contact-list{
+    ul{
+        list-style-type: none !important;
+        li{
+            display: inline-block;
+        }
+    }
+}
+
 footer{
 
     background-color: #1a1039 !important;

@@ -49,10 +49,10 @@
 	});
 
 	$('.contact-form').submit(function(){
-		$(this).fadeOut();
+		$(this).css('pointer-events','none');
 		$('#form-header').fadeOut(function(){
 			setTimeout(function(){
-				$('#form-container').remove();
+				$('#form-container').css('opacity','0.3');
 				$('#form-header').html('Your message has been sent. Thank You.');
 				$('#form-header').fadeIn();
 			},100);
