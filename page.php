@@ -8,11 +8,20 @@
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 			<div class="spacer-50"></div>
-			<div class="container mt-5 page-content">
+			<div class="container-fluid primary py-5 mt-5">
+				<div class="container py-4">
+					<div class="row justify-content-center justify-content-md-start align-items-md-center">
+						<div class="col-10 col-md-6">
+							<strong><h1 class="text-primary text-white"><?php the_title(); ?></h1></strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="spacer-30"></div>
+			<div class="container my-4 page-content">
 				<div class="container-fluid">
 					<div class="row justify-content-center justify-content-md-start">
 						<div class="col-10">
-							<strong><h2 class="text-primary"><?php the_title(); ?></h2></strong>
 							<?php the_content(); ?>
 						</div>
 					</div>
