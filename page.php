@@ -7,11 +7,11 @@
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-			<div class="spacer-50"></div>
-			<div class="container-fluid primary py-5 mt-5">
+			<div class="spacer-100"></div>
+			<div class="container-fluid primary py-5 mt-4">
 				<div class="container py-4">
 					<div class="row justify-content-center justify-content-md-start align-items-md-center">
-						<div class="col-10 col-md-6">
+						<div class="col-10">
 							<strong><h1 class="text-primary text-white"><?php the_title(); ?></h1></strong>
 						</div>
 					</div>

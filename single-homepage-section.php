@@ -5,7 +5,7 @@
 	<section>
 
 		<div class="spacer-50"></div>
-		<div class="container-fluid mt-5 page-content">
+		<div class="container-fluid mt-3 page-content">
 			<div class="container-fluid primary py-4 mb-5">
 				<div class="container">
 					<div class="row justify-content-center justify-content-md-start align-items-md-center">
